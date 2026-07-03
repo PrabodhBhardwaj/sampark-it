@@ -1,88 +1,150 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-PD1MJ5YRSR"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+    <!-- Google tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-PD1MJ5YRSR"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-PD1MJ5YRSR');
+    </script>
 
-  gtag('config', 'G-PD1MJ5YRSR');
-</script>
-    <link rel="shortcut icon" type="image/x-icon" href="favicon.png">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contact | SamparkIT Solutions</title>
+    <meta name="description" content="Reach out to SamparkIT Solutions for professional IT consulting, networking, and software development.">
     <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/png" href="favicon.png">
+
     <style>
-        /* Specific Styles for Contact Page */
-        .contact-wrapper {
-            display: grid;
-            grid-template-columns: 1fr 1.5fr;
-            gap: 50px;
-            margin-top: 40px;
+        :root {
+            --glass-bg: rgba(255, 255, 255, 0.03);
+            --glass-border: rgba(255, 255, 255, 0.1);
+            --accent-glow: rgba(56, 189, 248, 0.3);
         }
 
-        .contact-info h2 { font-size: 2.5rem; margin-bottom: 20px; }
-        
-        .info-item {
-            display: flex;
-            align-items: center;
-            gap: 20px;
+        .contact-wrapper {
+            display: grid;
+            grid-template-columns: 1fr 1.2fr;
+            gap: 60px;
+            margin-top: 50px;
+            align-items: start;
+        }
+
+        /* Left Side: Info Items */
+        .info-card {
+            background: var(--glass-bg);
+            border: 1px solid var(--glass-border);
+            padding: 30px;
+            border-radius: 20px;
+            margin-bottom: 20px;
+            transition: 0.3s;
+        }
+        .info-card:hover {
+            border-color: var(--accent);
+            transform: scale(1.02);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+        }
+
+        /* Right Side: Advanced Form */
+        .form-container {
+            background: rgba(15, 23, 42, 0.8);
+            border: 1px solid var(--glass-border);
+            padding: 50px;
+            border-radius: 30px;
+            position: relative;
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+        }
+
+        .form-container::before {
+            content: '';
+            position: absolute;
+            top: -2px; left: -2px; right: -2px; bottom: -2px;
+            background: linear-gradient(45deg, transparent, var(--accent), transparent);
+            z-index: -1;
+            border-radius: 32px;
+            opacity: 0.3;
+        }
+
+        .input-group {
+            position: relative;
             margin-bottom: 30px;
-            background: rgba(255, 255, 255, 0.03);
-            padding: 20px;
-            border-radius: 15px;
-            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .input-group input, 
+        .input-group textarea,
+        .input-group select {
+            width: 100%;
+            background: transparent;
+            border: none;
+            border-bottom: 2px solid #334155;
+            padding: 12px 5px;
+            color: white;
+            font-size: 1rem;
+            outline: none;
+            transition: 0.4s;
+        }
+
+        /* Label Animation */
+        .input-group label {
+            position: absolute;
+            top: 12px; left: 5px;
+            color: #64748b;
+            pointer-events: none;
             transition: 0.3s;
         }
 
-        .info-item:hover {
+        .input-group input:focus ~ label,
+        .input-group input:valid ~ label,
+        .input-group textarea:focus ~ label,
+        .input-group textarea:valid ~ label {
+            top: -15px;
+            font-size: 0.8rem;
+            color: var(--accent);
+            font-weight: bold;
+        }
+
+        .input-group input:focus, 
+        .input-group textarea:focus {
             border-color: var(--accent);
-            background: rgba(56, 189, 248, 0.05);
+            box-shadow: 0 5px 15px var(--accent-glow);
         }
 
-        .info-icon {
-            font-size: 1.8rem;
+        .form-header { margin-bottom: 40px; }
+        .form-header h2 { font-size: 2rem; margin-bottom: 10px; }
+        
+        /* Modern Select Box */
+        select option { background: #0f172a; color: white; }
+
+        .submit-btn {
             background: var(--gradient);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
+            color: #000;
+            padding: 18px 40px;
+            border-radius: 12px;
+            border: none;
+            width: 100%;
+            font-weight: bold;
+            font-size: 1.1rem;
+            cursor: pointer;
+            transition: 0.4s;
+            box-shadow: 0 10px 20px rgba(56, 189, 248, 0.2);
         }
 
-        .info-text h4 { margin: 0; color: var(--accent); font-size: 0.9rem; letter-spacing: 1px; text-transform: uppercase; }
-        .info-text p { margin: 5px 0 0; font-size: 1.1rem; color: var(--text-main); }
-
-        .contact-form-card {
-            background: var(--card-bg);
-            padding: 40px;
-            border-radius: 20px;
-            border: 1px solid rgba(255, 255, 255, 0.05);
-            box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+        .submit-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 30px rgba(56, 189, 248, 0.4);
+            letter-spacing: 1px;
         }
 
-        select {
-            width: 100%; padding: 15px; margin-bottom: 20px;
-            background: #1e293b; border: 1px solid rgba(255,255,255,0.1);
-            color: white; border-radius: 10px; font-family: inherit;
-            appearance: none;
-        }
-
-        .social-links { display: flex; gap: 15px; margin-top: 20px; }
-        .social-icon {
-            width: 45px; height: 45px;
-            display: flex; align-items: center; justify-content: center;
-            border: 1px solid var(--text-dim); border-radius: 10px;
-            color: var(--text-main); text-decoration: none; transition: 0.3s;
-        }
-        .social-icon:hover { border-color: var(--accent); color: var(--accent); transform: translateY(-3px); }
-
-        @media (max-width: 850px) {
+        @media (max-width: 900px) {
             .contact-wrapper { grid-template-columns: 1fr; }
+            .form-container { padding: 30px; }
         }
     </style>
 </head>
 <body>
+
     <header>
         <a href="index.html" class="logo">SAMPARK.IT</a>
         <nav>
@@ -95,70 +157,66 @@
     <div class="container">
         <div class="contact-wrapper">
             
-            <!-- Left Side: Info -->
-            <div class="contact-info">
-                <h1>Get in <span class="grad-text">Sampark</span></h1>
-                <p style="color:var(--text-dim); margin-bottom: 40px;">
-                    Have a complex hardware issue or a new app idea? Let's discuss your requirements. With 18 years in IT, I provide solutions that last.
-                </p>
-
-                <div class="info-item">
-                    <div class="info-icon">📧</div>
-                    <div class="info-text">
-                        <h4>Email Us</h4>
-                        <p>solutions@samparkit.com</p>
-                    </div>
+            <!-- Left Side: Contact Details -->
+            <div class="contact-sidebar">
+                <h1 style="margin-bottom: 20px;">Let's <span class="grad-text">Connect</span></h1>
+                <p style="color:var(--text-dim); margin-bottom: 40px;">Ready to elevate your IT infrastructure? Reach out for a consultation from a veteran engineer.</p>
+                
+                <div class="info-card">
+                    <h4 style="color:var(--accent); margin-bottom: 10px; font-size: 0.8rem; text-transform: uppercase;">Direct Line</h4>
+                    <p style="font-size: 1.2rem;">+91 9413470533</p>
                 </div>
 
-                <div class="info-item">
-                    <div class="info-icon">📱</div>
-                    <div class="info-text">
-                        <h4>Call / WhatsApp</h4>
-                        <p>+91 9413470533</p>
-                    </div>
+                <div class="info-card">
+                    <h4 style="color:var(--accent); margin-bottom: 10px; font-size: 0.8rem; text-transform: uppercase;">Email Address</h4>
+                    <p style="font-size: 1.2rem;">solutions.samparkit@gmail.com</p>
                 </div>
 
-                <div class="info-item">
-                    <div class="info-icon">📍</div>
-                    <div class="info-text">
-                        <h4>Base Location</h4>
-                        <p>India (Available Globally)</p>
-                    </div>
-                </div>
-
-                <h3>Follow the journey</h3>
-                <div class="social-links">
-                    <a href="#" class="social-icon">Li</a> <!-- LinkedIn -->
-                    <a href="#" class="social-icon">Gh</a> <!-- GitHub -->
-                    <a href="#" class="social-icon">Wa</a> <!-- WhatsApp -->
+                <div class="info-card">
+                    <h4 style="color:var(--accent); margin-bottom: 10px; font-size: 0.8rem; text-transform: uppercase;">Support</h4>
+                    <p style="font-size: 1.1rem; color:var(--text-dim);">Available Globally | Online Support 24/7</p>
                 </div>
             </div>
 
-            <!-- Right Side: Form -->
-            <div class="contact-form-card">
-                <form>
-                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 15px;">
-                        <input type="text" placeholder="Full Name" required>
-                        <input type="email" placeholder="Email Address" required>
-                    </div>
-                    
-                    <select required>
-                        <option value="" disabled selected>Select Inquiry Type</option>
-                        <option value="hardware">Hardware Infrastructure</option>
-                        <option value="networking">Networking & Security</option>
-                        <option value="app">Flutter App Development</option>
-                        <option value="web">Web Engineering</option>
-                        <option value="consultation">IT Consultation</option>
-                    </select>
+            <!-- Right Side: Advanced Glass Form -->
+            <div class="form-container">
+                <div class="form-header">
+                    <h2>Send a Message</h2>
+                    <p style="color:var(--text-dim);">We respond within 24 business hours.</p>
+                </div>
 
-                    <textarea rows="5" placeholder="Describe your project or technical issue in detail..." required></textarea>
+                <form action="https://formspree.io/f/xzdlyelr" method="POST">
+                    <div class="input-group">
+                        <input type="text" name="name" required>
+                        <label>Full Name</label>
+                    </div>
+
+                    <div class="input-group">
+                        <input type="email" name="email" required>
+                        <label>Email Address</label>
+                    </div>
+
+                    <div class="input-group">
+                        <select name="service_type" required style="padding-left: 0;">
+                            <option value="" disabled selected></option>
+                            <option value="Networking">Networking</option>
+                            <option value="Hardware Infrastructure">Hardware Infrastructure</option>
+                            <option value="Web Engineering">Web Engineering</option>
+                            <option value="Mobile App">Mobile App Development</option>
+                            <option value="Other">Other IT Consultation</option>
+                        </select>
+                        <label style="top: -15px; font-size: 0.8rem; color: var(--accent);">Select Service</label>
+                    </div>
+
+                    <div class="input-group">
+                        <textarea name="message" rows="4" required></textarea>
+                        <label>Message / Project Details</label>
+                    </div>
+
+                    <button type="submit" class="submit-btn">Establish Connection ⚡</button>
                     
-                    <button type="submit" class="btn" style="width: 100%; font-size: 1rem; padding: 18px;">
-                        Establish Connection
-                    </button>
-                    
-                    <p style="text-align: center; font-size: 12px; color: var(--text-dim); margin-top: 15px;">
-                        ⚡ Typical response time: Within 24 hours
+                    <p style="text-align: center; color: var(--text-dim); font-size: 0.8rem; margin-top: 20px;">
+                        Secure SSL Encryption Active
                     </p>
                 </form>
             </div>
@@ -166,6 +224,7 @@
         </div>
     </div>
 
-    <footer>&copy; 2024 SamparkIT Solutions. Expert Guidance Since 2006.</footer>
+    <footer style="margin-top: 80px;">&copy; 2024 SamparkIT Solutions. Engineered by a Veteran.</footer>
+
 </body>
 </html>
