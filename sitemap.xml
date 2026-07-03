@@ -1,22 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <!-- Home Page -->
   <url>
-    <loc>https://[Aapka-GitHub-Username].github.io/sampark-it/</loc>
+    <loc>https://prabodhbhardwaj.github.io/sampark-it/</loc>
     <lastmod>2023-10-27</lastmod>
     <priority>1.00</priority>
-  </url>
-
-  <!-- Agar koi aur page hai jaise About ya Contact, toh unhe niche add karein, nahi toh delete kar dein -->
-  <url>
-    <loc>https://[Aapka-GitHub-Username].github.io/sampark-it/about.html</loc>
-    <lastmod>2023-10-27</lastmod>
-    <priority>0.80</priority>
-  </url>
-
-  <url>
-    <loc>https://[Aapka-GitHub-Username].github.io/sampark-it/contact.html</loc>
-    <lastmod>2023-10-27</lastmod>
-    <priority>0.80</priority>
   </url>
 </urlset>
