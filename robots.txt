@@ -1,5 +1,4 @@
 User-agent: *
 Allow: /
 
-# Sitemap link
-Sitemap: https://[Aapka-GitHub-Username].github.io/sampark-it/sitemap.xml
+Sitemap: https://prabodhbhardwaj.github.io/sampark-it/sitemap.xml
