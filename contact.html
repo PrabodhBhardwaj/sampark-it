@@ -32,7 +32,6 @@
             align-items: start;
         }
 
-        /* Left Side: Info Items */
         .info-card {
             background: var(--glass-bg);
             border: 1px solid var(--glass-border);
@@ -47,7 +46,6 @@
             box-shadow: 0 10px 30px rgba(0,0,0,0.3);
         }
 
-        /* Right Side: Advanced Form */
         .form-container {
             background: rgba(15, 23, 42, 0.8);
             border: 1px solid var(--glass-border);
@@ -86,7 +84,6 @@
             transition: 0.4s;
         }
 
-        /* Label Animation */
         .input-group label {
             position: absolute;
             top: 12px; left: 5px;
@@ -114,7 +111,6 @@
         .form-header { margin-bottom: 40px; }
         .form-header h2 { font-size: 2rem; margin-bottom: 10px; }
         
-        /* Modern Select Box */
         select option { background: #0f172a; color: white; }
 
         .submit-btn {
@@ -146,7 +142,10 @@
 <body>
 
     <header>
-        <a href="index.html" class="logo">SAMPARK.IT</a>
+        <a href="index.html" class="logo" style="display: flex; align-items: center; gap: 12px; text-decoration: none;">
+            <img src="favicon.png?v=2" alt="SamparkIT Logo" style="height: 42px; width: auto; border-radius: 6px; display: block;">
+            <span style="font-weight: bold; font-size: 1.5rem; color: white;">SAMPARK.IT</span>
+        </a>
         <nav>
             <a href="services.html">SERVICES</a>
             <a href="experience.html">EXPERIENCE</a>
@@ -157,7 +156,6 @@
     <div class="container">
         <div class="contact-wrapper">
             
-            <!-- Left Side: Contact Details -->
             <div class="contact-sidebar">
                 <h1 style="margin-bottom: 20px;">Let's <span class="grad-text">Connect</span></h1>
                 <p style="color:var(--text-dim); margin-bottom: 40px;">Ready to elevate your IT infrastructure? Reach out for a consultation from a veteran engineer.</p>
@@ -178,7 +176,6 @@
                 </div>
             </div>
 
-            <!-- Right Side: Advanced Glass Form -->
             <div class="form-container">
                 <div class="form-header">
                     <h2>Send a Message</h2>
