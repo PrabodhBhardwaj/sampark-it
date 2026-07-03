@@ -94,3 +94,16 @@ nav a:hover { color: var(--accent); }
 .exp-badge {
     display: inline-block;
     padding: 6px 16px;
+    .logo img {
+    max-height: 50px; /* Logo ki height control karne ke liye */
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    font-weight: bold;
+    color: white;
+    font-size: 1.5rem;
+}
