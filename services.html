@@ -1,91 +1,230 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-PD1MJ5YRSR"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+    <!-- Google tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-PD1MJ5YRSR"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-PD1MJ5YRSR');
+    </script>
 
-  gtag('config', 'G-PD1MJ5YRSR');
-</script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Expert IT Services | SamparkIT Solutions</title>
-    <meta name="description" content="Professional IT services: Hardware Infrastructure, Cisco Networking, Web Engineering, and Flutter Development by SamparkIT.">
+    <title>Contact | SamparkIT Solutions</title>
+    <meta name="description" content="Reach out to SamparkIT Solutions for professional IT consulting, networking, and software development.">
     <link rel="stylesheet" href="style.css">
     <link rel="icon" type="image/png" href="favicon.png">
+
     <style>
-        .services-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
-            margin-top: 50px;
+        :root {
+            --glass-bg: rgba(255, 255, 255, 0.03);
+            --glass-border: rgba(255, 255, 255, 0.1);
+            --accent-glow: rgba(56, 189, 248, 0.3);
         }
-        .service-card {
-            background: rgba(255, 255, 255, 0.03);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            padding: 40px;
+
+        .contact-wrapper {
+            display: grid;
+            grid-template-columns: 1fr 1.2fr;
+            gap: 60px;
+            margin-top: 50px;
+            align-items: start;
+        }
+
+        /* Left Side: Info Items */
+        .info-card {
+            background: var(--glass-bg);
+            border: 1px solid var(--glass-border);
+            padding: 30px;
             border-radius: 20px;
+            margin-bottom: 20px;
             transition: 0.3s;
         }
-        .service-card:hover {
+        .info-card:hover {
             border-color: var(--accent);
-            transform: translateY(-10px);
-            background: rgba(56, 189, 248, 0.05);
+            transform: scale(1.02);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
         }
-        .service-icon { font-size: 2.5rem; margin-bottom: 20px; display: block; }
-        .service-card h3 { color: var(--accent); margin-bottom: 15px; }
-        .service-card p { color: var(--text-dim); line-height: 1.6; }
+
+        /* Right Side: Advanced Form */
+        .form-container {
+            background: rgba(15, 23, 42, 0.8);
+            border: 1px solid var(--glass-border);
+            padding: 50px;
+            border-radius: 30px;
+            position: relative;
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+        }
+
+        .form-container::before {
+            content: '';
+            position: absolute;
+            top: -2px; left: -2px; right: -2px; bottom: -2px;
+            background: linear-gradient(45deg, transparent, var(--accent), transparent);
+            z-index: -1;
+            border-radius: 32px;
+            opacity: 0.3;
+        }
+
+        .input-group {
+            position: relative;
+            margin-bottom: 30px;
+        }
+
+        .input-group input, 
+        .input-group textarea,
+        .input-group select {
+            width: 100%;
+            background: transparent;
+            border: none;
+            border-bottom: 2px solid #334155;
+            padding: 12px 5px;
+            color: white;
+            font-size: 1rem;
+            outline: none;
+            transition: 0.4s;
+        }
+
+        /* Label Animation */
+        .input-group label {
+            position: absolute;
+            top: 12px; left: 5px;
+            color: #64748b;
+            pointer-events: none;
+            transition: 0.3s;
+        }
+
+        .input-group input:focus ~ label,
+        .input-group input:valid ~ label,
+        .input-group textarea:focus ~ label,
+        .input-group textarea:valid ~ label {
+            top: -15px;
+            font-size: 0.8rem;
+            color: var(--accent);
+            font-weight: bold;
+        }
+
+        .input-group input:focus, 
+        .input-group textarea:focus {
+            border-color: var(--accent);
+            box-shadow: 0 5px 15px var(--accent-glow);
+        }
+
+        .form-header { margin-bottom: 40px; }
+        .form-header h2 { font-size: 2rem; margin-bottom: 10px; }
+        
+        /* Modern Select Box */
+        select option { background: #0f172a; color: white; }
+
+        .submit-btn {
+            background: var(--gradient);
+            color: #000;
+            padding: 18px 40px;
+            border-radius: 12px;
+            border: none;
+            width: 100%;
+            font-weight: bold;
+            font-size: 1.1rem;
+            cursor: pointer;
+            transition: 0.4s;
+            box-shadow: 0 10px 20px rgba(56, 189, 248, 0.2);
+        }
+
+        .submit-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 30px rgba(56, 189, 248, 0.4);
+            letter-spacing: 1px;
+        }
+
+        @media (max-width: 900px) {
+            .contact-wrapper { grid-template-columns: 1fr; }
+            .form-container { padding: 30px; }
+        }
     </style>
 </head>
 <body>
+
     <header>
         <a href="index.html" class="logo">SAMPARK.IT</a>
         <nav>
-            <a href="services.html" class="active">SERVICES</a>
+            <a href="services.html">SERVICES</a>
             <a href="experience.html">EXPERIENCE</a>
             <a href="contact.html">CONTACT</a>
         </nav>
     </header>
 
-    <main class="container">
-        <section style="padding: 60px 0; text-align: center;">
-            <h1 style="font-size: 3rem;">Our <span class="grad-text">Expertise</span></h1>
-            <p style="max-width: 700px; margin: 20px auto; color: var(--text-dim);">
-                Providing high-end technical solutions with over 18 years of field experience. From physical hardware to cloud innovation.
-            </p>
+    <div class="container">
+        <div class="contact-wrapper">
+            
+            <!-- Left Side: Contact Details -->
+            <div class="contact-sidebar">
+                <h1 style="margin-bottom: 20px;">Let's <span class="grad-text">Connect</span></h1>
+                <p style="color:var(--text-dim); margin-bottom: 40px;">Ready to elevate your IT infrastructure? Reach out for a consultation from a veteran engineer.</p>
+                
+                <div class="info-card">
+                    <h4 style="color:var(--accent); margin-bottom: 10px; font-size: 0.8rem; text-transform: uppercase;">Direct Line</h4>
+                    <p style="font-size: 1.2rem;">+91 9413470533</p>
+                </div>
 
-            <div class="services-grid">
-                <div class="service-card">
-                    <span class="service-icon">🖥️</span>
-                    <h3>Hardware Infrastructure</h3>
-                    <p>End-to-end server management, hardware procurement, and system engineering for robust business operations.</p>
+                <div class="info-card">
+                    <h4 style="color:var(--accent); margin-bottom: 10px; font-size: 0.8rem; text-transform: uppercase;">Email Address</h4>
+                    <p style="font-size: 1.2rem;">solutions.samparkit@gmail.com</p>
                 </div>
-                <div class="service-card">
-                    <span class="service-icon">🌐</span>
-                    <h3>Networking</h3>
-                    <p>Expert network design, security implementation, and troubleshooting using industry-standard protocols.</p>
-                </div>
-                <div class="service-card">
-                    <span class="service-icon">💻</span>
-                    <h3>Web Engineering</h3>
-                    <p>Building scalable, high-performance web applications using modern stacks tailored for business growth.</p>
-                </div>
-                <div class="service-card">
-                    <span class="service-icon">📱</span>
-                    <h3>Flutter Development</h3>
-                    <p>Crafting beautiful, native cross-platform mobile applications with Flutter for Android and iOS.</p>
+
+                <div class="info-card">
+                    <h4 style="color:var(--accent); margin-bottom: 10px; font-size: 0.8rem; text-transform: uppercase;">Support</h4>
+                    <p style="font-size: 1.1rem; color:var(--text-dim);">Available Globally | Online Support 24/7</p>
                 </div>
             </div>
 
-            <div style="margin-top: 60px;">
-                <a href="contact.html" class="btn">Start a Project</a>
-            </div>
-        </section>
-    </main>
+            <!-- Right Side: Advanced Glass Form -->
+            <div class="form-container">
+                <div class="form-header">
+                    <h2>Send a Message</h2>
+                    <p style="color:var(--text-dim);">We respond within 24 business hours.</p>
+                </div>
 
-    <footer>&copy; 2024 SamparkIT Solutions. Expert Guidance Since 2006.</footer>
+                <form action="https://formspree.io/f/xzdlyelr" method="POST">
+                    <div class="input-group">
+                        <input type="text" name="name" required>
+                        <label>Full Name</label>
+                    </div>
+
+                    <div class="input-group">
+                        <input type="email" name="email" required>
+                        <label>Email Address</label>
+                    </div>
+
+                    <div class="input-group">
+                        <select name="service_type" required style="padding-left: 0;">
+                            <option value="" disabled selected></option>
+                            <option value="Networking">Networking</option>
+                            <option value="Hardware Infrastructure">Hardware Infrastructure</option>
+                            <option value="Web Engineering">Web Engineering</option>
+                            <option value="Mobile App">Mobile App Development</option>
+                            <option value="Other">Other IT Consultation</option>
+                        </select>
+                        <label style="top: -15px; font-size: 0.8rem; color: var(--accent);">Select Service</label>
+                    </div>
+
+                    <div class="input-group">
+                        <textarea name="message" rows="4" required></textarea>
+                        <label>Message / Project Details</label>
+                    </div>
+
+                    <button type="submit" class="submit-btn">Establish Connection ⚡</button>
+                    
+                    <p style="text-align: center; color: var(--text-dim); font-size: 0.8rem; margin-top: 20px;">
+                        Secure SSL Encryption Active
+                    </p>
+                </form>
+            </div>
+
+        </div>
+    </div>
+
+    <footer style="margin-top: 80px;">&copy; 2024 SamparkIT Solutions. Engineered by a Veteran.</footer>
+
 </body>
 </html>
