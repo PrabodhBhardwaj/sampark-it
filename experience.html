@@ -1,39 +1,86 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-   <link rel="shortcut icon" type="image/x-icon" href="favicon.png">
     <meta charset="UTF-8">
-    <title>Experience Journey | SamparkIT Solutions</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Journey | 18 Years in IT | SamparkIT</title>
+    <meta name="description" content="A veteran's journey in IT excellence. From 2006 to 2024, delivering over 500 solutions in hardware, networking, and software.">
     <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/png" href="favicon.png">
+    <style>
+        .timeline {
+            border-left: 2px solid var(--accent);
+            margin: 50px 0;
+            padding-left: 30px;
+            position: relative;
+        }
+        .timeline-item {
+            margin-bottom: 40px;
+            position: relative;
+        }
+        .timeline-item::before {
+            content: '';
+            width: 15px;
+            height: 15px;
+            background: var(--accent);
+            border-radius: 50%;
+            position: absolute;
+            left: -38.5px;
+            top: 5px;
+        }
+        .year { font-weight: bold; color: var(--accent); font-size: 1.2rem; }
+        .timeline-content h3 { margin: 10px 0; }
+        .timeline-content p { color: var(--text-dim); }
+    </style>
 </head>
 <body>
     <header>
         <a href="index.html" class="logo">SAMPARK.IT</a>
-        <nav><a href="services.html">SERVICES</a><a href="experience.html">EXPERIENCE</a><a href="contact.html">CONTACT</a></nav>
+        <nav>
+            <a href="services.html">SERVICES</a>
+            <a href="experience.html" class="active">EXPERIENCE</a>
+            <a href="contact.html">CONTACT</a>
+        </nav>
     </header>
-    <div class="container">
-        <h1 style="text-align: center; margin-bottom: 50px;">The <span class="grad-text">18-Year</span> Evolution</h1>
-        
-        <div style="display: flex; flex-direction: column; gap: 30px;">
-            <div class="card" style="border-left: 4px solid var(--accent);">
-                <h3 class="grad-text">Modern Ecosystems (2018 - 2024)</h3>
-                <p><strong>Senior IT Consultant & App Developer</strong></p>
-                <p style="color:var(--text-dim);">Developing high-performance Flutter apps and managing secure cloud infrastructures with modern networking protocols.</p>
+
+    <main class="container">
+        <section style="padding: 60px 0;">
+            <h1 style="font-size: 3rem;">A Legacy of <span class="grad-text">18 Years</span></h1>
+            <p style="color: var(--text-dim); margin-top: 20px;">
+                Since 2006, SamparkIT has been at the forefront of technical innovation, helping businesses navigate the complex world of IT.
+            </p>
+
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="year">2006 - 2012</div>
+                    <div class="timeline-content">
+                        <h3>The Foundation</h3>
+                        <p>Established as a core Hardware and System Engineering firm. Focused on infrastructure reliability and physical server maintenance.</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="year">2012 - 2018</div>
+                    <div class="timeline-content">
+                        <h3>Networking Era</h3>
+                        <p>Specialized in Cisco Networking and Enterprise Security. Delivered solutions for large-scale corporate infrastructures.</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="year">2018 - Present</div>
+                    <div class="timeline-content">
+                        <h3>Digital Transformation</h3>
+                        <p>Expanded into Web Engineering and Flutter Mobile Development. Bridging the gap between legacy hardware and modern software.</p>
+                    </div>
+                </div>
             </div>
 
-            <div class="card" style="border-left: 4px solid #818cf8;">
-                <h3>Network Architecture Era (2012 - 2018)</h3>
-                <p><strong>System & Network Engineer</strong></p>
-                <p style="color:var(--text-dim);">Focused on complex Cisco networking, enterprise server deployment, and the rise of modern web development.</p>
+            <div style="background: rgba(255,255,255,0.03); padding: 40px; border-radius: 20px; text-align: center;">
+                <h2 style="margin-bottom: 20px;">Why Choose a Veteran?</h2>
+                <p style="color: var(--text-dim);">Experience isn't just a number; it's the ability to foresee technical challenges before they arise. Over 500+ successful solutions delivered globally.</p>
             </div>
+        </section>
+    </main>
 
-            <div class="card" style="border-left: 4px solid #475569;">
-                <h3 style="color:#94a3b8">The Foundation (2006 - 2012)</h3>
-                <p><strong>Hardware & Support Specialist</strong></p>
-                <p style="color:var(--text-dim);">Building the foundation with core hardware engineering, technical troubleshooting, and early-stage network setups.</p>
-            </div>
-        </div>
-    </div>
-    <footer>&copy; 2024 SamparkIT Solutions.</footer>
+    <footer>&copy; 2024 SamparkIT Solutions. Engineered by a Veteran.</footer>
 </body>
 </html>
